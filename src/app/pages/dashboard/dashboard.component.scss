@@ -1,0 +1,234 @@
+.dashboard-container {
+
+  overflow-x: hidden;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    border-bottom: .7px solid #ebebeb;
+    margin-top: 64px;
+    height: 80px;
+  }
+
+  .left-header {
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+
+    .overview-header {
+      h3 {
+        font-size: 0.8rem;
+        color: #878787;
+      }
+    }
+
+
+  }
+
+  .right-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    .ri-notification-line {
+      font-size: 18px;
+    }
+
+    .img-user-profile {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      background-color: #707070;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.currency-cards-wrapper {
+  margin-top: 36px;
+  position: relative;
+  height: 240px;
+  margin-inline: 56px;
+}
+
+.info-panels-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: masonry;
+  grid-gap: 1rem 3rem;
+  margin: 30px 0;
+
+  .card-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+  }
+
+
+  .imperssion-buttons_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .imperssion-button {
+      cursor: pointer;
+      background-color: #8248FF30;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      color: #8248FF;
+
+
+    }
+
+    .btn-active {
+      background: #8248FF;
+      color: white
+    }
+
+    .imperssion-chart {
+      display: flex;
+      justify-content: center;
+
+    }
+  }
+
+  .card-body {
+    margin-top: 20px;
+  }
+
+
+}
+
+.activity-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .activity-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 2px;
+    transition: all 0.2s ease;
+
+    .activity-icon {
+      width: 50px;
+      height: 50px;
+      padding-inline: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 40px;
+        border-radius: 100%;
+        background: #707070;
+        color: white
+      }
+    }
+
+    .activity-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 4px;
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+  }
+
+  .activity-item:hover {
+    box-shadow: 0px 5px 7px -3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.bitcoin-chart-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+
+  .info-panel {
+
+    .amount {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 1.3rem;
+
+      span {
+        font-size: 1rem;
+      }
+    }
+
+    .amount-info {
+      font-size: 0.8rem;
+    }
+  }
+
+  .bitcoin-chart {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    canvas {
+      width: 100%;
+    }
+  }
+}
+
+.portfolio-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  .portfolio-doughnut-chart-wrapper {
+    .chart {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      canvas {
+        width: 70px;
+      }
+    }
+
+  }
+
+  .balance-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    span {
+      font-size: 0.8rem;
+    }
+  }
+}

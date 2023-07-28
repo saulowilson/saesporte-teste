@@ -1,0 +1,19 @@
+<nav class="sidenav" [ngClass]="isSidebarOpen ? 'sidenav-collapsed' : ''">
+  <button class="menu-button" (click)="toggleSidebar()">
+    <i class="ri-menu-2-fill"></i>
+  </button>
+
+  <div class="logo-container" [ngClass]="!isSidebarOpen ? '' : 'logo-hidden'">
+    <img src="assets/images/logo.jpeg" alt="logo">
+  </div>
+
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item" *ngFor="let data of navData">
+      <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <i class="sidenav-nav-icon" [class]="data.icon"></i>
+        <span class="sidenav-link-text" *ngIf="!isSidebarOpen">{{ data.label }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,111 @@
+<section class=" dashboard-container">
+  <div class="container header-container">
+    <div class="left-header">
+      <div class="overview-header">
+        <h3>Overview Dashboard</h3>
+        <h1>Trading View</h1>
+      </div>
+
+      <app-currency-tab></app-currency-tab>
+    </div>
+    <div class="right-header">
+      <i class="ri-notification-line"></i>
+      <div class="img-user-profile">
+        <i class="ri-user-line"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="currency-cards-wrapper">
+    <app-currency-card></app-currency-card>
+  </div>
+
+  <div class="container info-panels-container">
+    <app-info-card size="large">
+      <div class="card-header">
+        <h3>Imperssion</h3>
+        <div class="imperssion-buttons_wrapper">
+          <button class="imperssion-button" [class]="imperssionButtonChartActive === 'weekly' ? 'btn-active': ''"
+            (click)="toogleImpersionButtonChart('weekly')">Weekly</button>
+          <button class="imperssion-button" [class]="imperssionButtonChartActive === 'monthly' ? 'btn-active': ''"
+            (click)="toogleImpersionButtonChart('monthly')">Monthly</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="imperssion-chart">
+          <canvas baseChart class="chart" [data]="imperssionChart.barChartData"
+            [options]="imperssionChart.barChartOptions" [plugins]="imperssionChart.barChartPlugins"
+            [type]="imperssionChart.barChartType">
+          </canvas>
+        </div>
+      </div>
+    </app-info-card>
+    <app-info-card size="large">
+      <div class="card-header">
+        <h3>Activity</h3>
+      </div>
+      <div class="card-body">
+        <div class="activity-wrapper">
+          <div class="activity-item" *ngFor="let data of activityTableData">
+            <div class="activity-icon">
+              <i [class]="data.icon"></i>
+            </div>
+            <div class="activity-content">
+              <h3>{{data.title}}</h3>
+              <p>{{data.subtitle}}</p>
+            </div>
+            <div class="activity-amount">
+              <p>${{data.amount}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-info-card>
+    <app-info-card size="medium">
+      <div class="card-header">
+        <h3>Bitcoin</h3>
+      </div>
+      <div class="card-body">
+        <div class="bitcoin-chart-wrapper">
+          <div class="info-panel">
+            <h3 class="amount">
+              2.5578 <span>BTC</span>
+            </h3>
+            <p class="amount-info">
+              $2500 USD
+            </p>
+          </div>
+          <div class="bitcoin-chart">
+            <canvas baseChart class="chart" [data]="bitcoinChart.lineChartData"
+              [options]="bitcoinChart.lineChartOptions" [type]="bitcoinChart.lineChartType"></canvas>
+          </div>
+        </div>
+      </div>
+    </app-info-card>
+    <app-info-card size="medium">
+      <div class="card-header">
+        <h3>Your Portfolio</h3>
+      </div>
+      <div class="card-body">
+        <div class="portfolio-wrapper">
+          <div class="portfolio-doughnut-chart-wrapper">
+            <div class="chart">
+              <canvas baseChart class="chart" [data]="portfolioChart.doughnutChartData"
+                [type]="portfolioChart.doughnutChartType" [options]="portfolioChart.doughnutChartOptions">
+              </canvas>
+              <div class="chart-info">
+                <h3>${{portfolioChart.doughnutChartData.datasets[0].data[0]}} BTC</h3>
+                <h3>${{portfolioChart.doughnutChartData.datasets[0].data[1]}} ETH</h3>
+              </div>
+            </div>
+          </div>
+          <div class="balance-info">
+            <h3>$8520.50</h3>
+            <span>Pending Balance</span>
+          </div>
+        </div>
+      </div>
+    </app-info-card>
+
+  </div>
+</section>

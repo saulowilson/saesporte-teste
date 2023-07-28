@@ -1,0 +1,14 @@
+<div class="currency-card-container">
+  <div class="card" [class]="card.background" *ngFor="let card of cards">
+    <img [src]="card.image" alt="" class="card-background">
+    <div class="card-content">
+      <div class="card-content-icon">
+        <i [class]="card.icon"></i>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">{{card.title}}</h3>
+        <span class="card-text">{{card.text}}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+.currency-card-container {
+  position: absolute;
+  top:0;
+  left: 0;
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 0;
+  overflow-x: auto;
+
+  --sb-track-color: #efefef;
+  --sb-thumb-color: #bababa;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  width: 300px;
+  min-width: 300px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  scroll-snap-align: start;
+
+  .card-background {
+    position: absolute;
+    right: -20px;
+    bottom: 20px;
+    opacity: 0.2;
+  }
+
+  .card-content {
+    height: 100%;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    color: white;
+
+    .card-content-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 100%;
+      background-color: #FFFFFF30;
+      margin-bottom: 16px;
+      i {
+        font-size: 32px;
+      }
+
+    }
+    .card-body {
+      .card-title {
+        font-size: 28px;
+      }
+
+      .card-text {
+        font-size: 14px;
+      }
+    }
+
+  }
+
+}
+
+.bg-blue {
+  background: linear-gradient(138deg, rgba(0,212,174,1) 0%, rgba(0,146,255,1) 100%), rgb(0,212,174);
+}
+
+.bg-pink {
+  background: linear-gradient(138deg, rgba(156,0,212,1) 0%, rgba(255,0,254,1) 100%), rgb(156,0,212);
+}
+.bg-orange {
+  background: linear-gradient(138deg, rgba(212,195,0,1) 0%, rgba(255,98,0,1) 100%), rgb(212,195,0);
+}
+.bg-purple {
+  background: linear-gradient(138deg, rgba(74,0,212,1) 0%, rgba(182,99,241,1) 100%), rgb(74,0,212);
+}
+
+.currency-card-container::-webkit-scrollbar {
+  height: 5px;
+}
+
+.currency-card-container::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+.currency-card-container::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+  //border: 1px solid #232E33;
+  width: 4px;
+}

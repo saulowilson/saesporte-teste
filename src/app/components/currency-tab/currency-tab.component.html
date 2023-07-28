@@ -1,0 +1,10 @@
+<div class="currencies-tab-container">
+  <ul>
+    <li *ngFor="let data of currencies">
+      <button class="btn-currency" [class]="[data.btnClass]" (click)="changeActiveCurrency(data.name)">
+        <i [class]="data.icon"></i>
+      </button>
+      <div class="border" [class]="[data.borderClass]" *ngIf="activeCurrency === data.name"></div>
+    </li>
+  </ul>
+</div>
